@@ -18,7 +18,7 @@
     </div>
     <div id="map"></div>
     <div id="panel"></div>
-    <a onclick="backtomap()" id="button2">Back</a>
+    <!-- <a onclick="backtomap()" id="button2">Back</a> -->
 
     <script>
       function getmap() {
@@ -26,11 +26,12 @@
         el.className = "show";
         document.body.className = "newbg";
       }
-      function backtomap() {
-        initMap();
-        var ele = document.getElementById("button2");
-        ele.className = "";
-      }
+      // function backtomap() {
+      //   initMap();
+      //   var ele = document.getElementById("button2");
+      //   ele.className = "";
+      //   document.getElementById("panel").innerHTML = "";
+      // }
     </script>
     <script src="./js/index.js"></script>
 

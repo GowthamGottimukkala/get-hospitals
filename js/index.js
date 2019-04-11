@@ -1,28 +1,3 @@
-// function initMap() {
-//   var directionsService = new google.maps.DirectionsService();
-//   var directionsDisplay = new google.maps.DirectionsRenderer();
-
-//   var map = new google.maps.Map(document.getElementById("map"), {
-//     zoom: 7,
-//     mapTypeId: google.maps.MapTypeId.ROADMAP
-//     });
-
-//   directionsDisplay.setMap(map);
-//   directionsDisplay.setPanel(document.getElementById("panel"));
-
-//   var request = {
-//     origin: "Chicago",
-//     destination: "New York",
-//     travelMode: google.maps.DirectionsTravelMode.DRIVING
-//   };
-
-//   directionsService.route(request, function(response, status) {
-//     if (status == google.maps.DirectionsStatus.OK) {
-//       directionsDisplay.setDirections(response);
-//     }
-//   });
-// }
-
 var map, infoWindow, request, service, pos, center;
 var markers = [];
 var places = [];
@@ -70,6 +45,10 @@ function callback(results, status) {
   console.log(results);
   createMarker(center);
 }
+//places are stored in results array
+// for(i=0;i<results.length;i++){
+
+// }
 
 function createMarker(place) {
   places.push(place.name);
@@ -82,30 +61,6 @@ function createMarker(place) {
     infoWindow = new google.maps.InfoWindow();
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
-    var ele = document.getElementById("button2");
-    ele.className = "show2";
-    var directionsService = new google.maps.DirectionsService();
-    var directionsDisplay = new google.maps.DirectionsRenderer();
-
-    var map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 7,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
-
-    directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById("panel"));
-
-    var request = {
-      origin: pos,
-      destination: place.name,
-      travelMode: google.maps.DirectionsTravelMode.DRIVING
-    };
-
-    directionsService.route(request, function(response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionsDisplay.setDirections(response);
-      }
-    });
   });
   return marker;
 }
@@ -127,4 +82,28 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 console.log(places);
 
-// For Directions
+// When CLicked the list item in the right side box
+// Directions
+// var ele = document.getElementById("button2");
+// ele.className = "show2";
+// var directionsService = new google.maps.DirectionsService();
+// var directionsDisplay = new google.maps.DirectionsRenderer();
+// var map = new google.maps.Map(document.getElementById("map"), {
+//   zoom: 7,
+//   mapTypeId: google.maps.MapTypeId.ROADMAP
+// });
+
+// directionsDisplay.setMap(map);
+// directionsDisplay.setPanel(document.getElementById("panel"));
+
+// var request = {
+//   origin: pos,
+//   destination: place.name,
+//   travelMode: google.maps.DirectionsTravelMode.DRIVING
+// };
+
+// directionsService.route(request, function(response, status) {
+//   if (status == google.maps.DirectionsStatus.OK) {
+//     directionsDisplay.setDirections(response);
+//   }
+// });

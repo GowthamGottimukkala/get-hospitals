@@ -44,7 +44,7 @@ body.newbg {
 #button2 {
   display: none;
   position: absolute;
-  width: 20vh;
+  width: 10vh;
   font-family: Oswald;
   background-color: #05386b;
   border-radius: 6px;
@@ -55,9 +55,9 @@ body.newbg {
   font-size: 20px;
   /* margin: auto; */
   cursor: pointer;
-  right: 3rem;
-  top: 3rem;
+  right: 3vh;
+  top: 1vh;
 }
-#button2.show2{
+#button2.show2 {
   display: block;
 }
