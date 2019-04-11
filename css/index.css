@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+#map {
+  display: block;
+  display: none;
+  margin: auto;
+  margin-top: 7vh;
+  height: 50%;
+  width: 50%;
+}
+#map.show {
+  display: block;
+}
+html,
+body {
+  background-color: #5cdb95;
+  background-image: url("../img/1.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: auto auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body.newbg {
+  background-image:url();
+}
+.button {
+  width: 20vh;
+  font-family: Oswald;
+  background-color: #05386b;
+  border-radius: 6px;
+  margin-left: 50%;
+  color: #edf5e1;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  margin: auto;
+  margin-top: 10vh;
+  cursor: pointer;
+}
