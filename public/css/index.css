@@ -13,7 +13,7 @@
 html,
 body {
   background-color: #5cdb95;
-  background-image: url("../img/1.png");
+  background-image: url("/img/1.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: auto auto;
@@ -60,4 +60,17 @@ body.newbg {
 }
 #button2.show2 {
   display: block;
+}
+
+#sidebox {
+  visibility: hidden;
+  position: absolute;
+  width: 30vh;
+  height: auto;
+  border: 5px solid red;
+  right: 3vh;
+  top: 5vh;
+}
+#sidebox.show{
+visibility: visible;
 }

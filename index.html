@@ -3,20 +3,23 @@
   <head>
     <link
       rel="shortcut icon"
-      href="./public/img/favicon.png"
+      href="/img/favicon.png"
       type="image/png"
       sizes="16x16"
     />
     <title>Find Hospitals</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="./public/css/index.css" />
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
     <div id="firstpart">
       <a onclick="getmap()" class="button">Get Hospitals Around Me</a>
     </div>
     <div id="map"></div>
+    <div id=sidebox>
+      <ul id="box"></ul>
+    </div>
     <div id="panel"></div>
     <!-- <a onclick="backtomap()" id="button2">Back</a> -->
 
@@ -25,6 +28,8 @@
         var el = document.getElementById("map");
         el.className = "show";
         document.body.className = "newbg";
+        var ele = document.getElementById("sidebox");
+        ele.className = "show";
       }
       // function backtomap() {
       //   initMap();
@@ -33,7 +38,7 @@
       //   document.getElementById("panel").innerHTML = "";
       // }
     </script>
-    <script src="./public/js/index.js"></script>
+    <script src="/js/index.js"></script>
 
     <script
       async

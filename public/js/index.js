@@ -1,4 +1,10 @@
-var map, infoWindow, request, service, pos, center;
+var map,
+  infoWindow,
+  request,
+  service,
+  pos,
+  center,
+  count = 0;
 var markers = [];
 var places = [];
 function initMap() {
@@ -6,7 +12,6 @@ function initMap() {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 11
   });
-  // infoWindow = new google.maps.InfoWindow();
   service = new google.maps.places.PlacesService(map);
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
@@ -42,13 +47,23 @@ function callback(results, status) {
       markers.push(createMarker(results[i]));
     }
   }
-  console.log(results);
+  fetch("http://localhost:5000/db", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      location: pos,
+      hospitals: places,
+      length: places.length
+    })
+  });
+  for (let i = 0; i < places.length; i++) {
+    var ul = document.getElementById("box");
+    var li = document.createElement("li");
+    li.appendChild(document.createTextNode(places[i]));
+    ul.appendChild(li);
+  }
   createMarker(center);
 }
-//places are stored in results array
-// for(i=0;i<results.length;i++){
-
-// }
 
 function createMarker(place) {
   places.push(place.name);
@@ -62,15 +77,10 @@ function createMarker(place) {
     infoWindow.setContent(place.name);
     infoWindow.open(map, this);
   });
+  count--;
   return marker;
 }
 
-//   function clearResults(markers) {
-//     for (var m in markers) {
-//       markers[m].setMap(null);
-//     }
-//     markers = [];
-//   }
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
   infoWindow.setContent(
@@ -80,10 +90,14 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   );
   infoWindow.open(map);
 }
-console.log(places);
 
-// When CLicked the list item in the right side box
-// Directions
+//   function clearResults(markers) {
+//     for (var m in markers) {
+//       markers[m].setMap(null);
+//     }
+//     markers = [];
+//   }
+
 // var ele = document.getElementById("button2");
 // ele.className = "show2";
 // var directionsService = new google.maps.DirectionsService();
