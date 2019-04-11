@@ -17,11 +17,19 @@
       <a onclick="getmap()" class="button">Get Hospitals Around Me</a>
     </div>
     <div id="map"></div>
+    <div id="panel"></div>
+    <a onclick="backtomap()" id="button2">Back</a>
+
     <script>
       function getmap() {
         var el = document.getElementById("map");
         el.className = "show";
         document.body.className = "newbg";
+      }
+      function backtomap() {
+        initMap();
+        var ele = document.getElementById("button2");
+        ele.className = "";
       }
     </script>
     <script src="./js/index.js"></script>

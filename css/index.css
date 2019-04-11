@@ -22,7 +22,7 @@ body {
   padding: 0;
 }
 body.newbg {
-  background-image:url();
+  background-image: url();
 }
 .button {
   width: 20vh;
@@ -39,4 +39,25 @@ body.newbg {
   margin: auto;
   margin-top: 10vh;
   cursor: pointer;
+}
+
+#button2 {
+  display: none;
+  position: absolute;
+  width: 20vh;
+  font-family: Oswald;
+  background-color: #05386b;
+  border-radius: 6px;
+  color: #edf5e1;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  /* margin: auto; */
+  cursor: pointer;
+  right: 3rem;
+  top: 3rem;
+}
+#button2.show2{
+  display: block;
 }
