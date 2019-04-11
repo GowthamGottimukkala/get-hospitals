@@ -47,7 +47,7 @@ function callback(results, status) {
       markers.push(createMarker(results[i]));
     }
   }
-  fetch("http://localhost:5000/db", {
+  fetch("https://get-hospitals.herokuapp.com/db", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
